@@ -6,7 +6,7 @@ Martin Riedl, Chris Biemann (2016): Unsupervised Compound Splitting With Distrib
 
 ## Split compounds
 
-
+```
 python decompound_secos.py dt_candidates word_count_file min_word_count(50) file_compound word_index prefix_length(3) suffix_length(3) word_length(5) dash_word(3) upper(upper) epsilon
 -----------------------------------------------------
 Parameter description:
@@ -22,7 +22,7 @@ word_length:		minimal word length that is used from the split candidates (recomm
 dash_word:		heuristic to split words with dash, which has no big impact (recommended: 3)
 upper:			consider uppercase letters (=upper) or not (=lower). Should be set for case-sensitive languages e.g. German
 epsilon:		smoothing factor (recommended parameter: 0.01
-
+```
 
 ### Example for German
 python decompound_secos.py data/denews70M_tokenized_trigram__candidates data/denews70M_tokeniyed_trigram__WordCount 50 german_compounds 0 3 3 5 3 upper 0.01
