@@ -42,13 +42,14 @@ python decompound_secos.py data/dutch_cow_trigram__candidates data/dutch_cow_tri
 ```
 
 
-## Training new language
+## Training Candidate for New Language
+In order to train candidates for a new language, a distributional thesaurus (DT) is required. The DT is a file of 3 tab separated columns with two words and their similarity score. The file needs to be ordered by the first word and the similarity score in descending ordering. The DT is generated using JoBimText (www.jobimtext.org) using only neighboring words by using the Trigram holing operation.
+Using such a DT the candidates can easily be generated with the following command:
 
 ```
 cat dt | python generateDecompoundCandidates.py > dt_candidates
 ```
 
-The DT is a file of 3 tab separated columns with two words and their similarity score. The file needs to be ordered by the first word and the similarity score in descending ordering. The DT is generated using JoBimText (www.jobimtext.org) using only neighboring words by using the Trigram holing operation.
 
 
 ## Evaluation
