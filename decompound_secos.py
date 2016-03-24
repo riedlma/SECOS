@@ -5,7 +5,21 @@ import re
 i=0
 
 if len(sys.argv)<11:
-    sys.stderr.write( "python "+sys.argv[0]+" dt_conv word_count_file min_word_count(50) file_compound word_index prefix_length(3) suffix_length(3) word_length(5) dash_word(3) upper(upper) epsilon\n")
+    sys.stderr.write( "python "+sys.argv[0]+" dt_candidates word_count_file min_word_count(50) file_compound word_index prefix_length(3) suffix_length(3) word_length(5) dash_word(3) upper(upper) epsilon\n")
+    sys.stderr.write("-----------------------------------------------------\n")
+    sys.stderr.write("Parameter description:\n")
+    sys.stderr.write("-----------------------------------------------------\n")
+    sys.stderr.write("dt_candidates:\t\tfile with words and their split candidates, generated from a distributional thesaurus (DT)\n")
+    sys.stderr.write("word_count_file:\tfile with word counts used for filtering\n")
+    sys.stderr.write("min_word_count:\t\tminimal word count used for split candidates (recommended paramater: 50)\n")
+    sys.stderr.write("file_compound:\t\tfile with words that should be decompounded (each compound needs to be in a single line)\n")
+    sys.stderr.write("word_index:\t\tindex of the word in the tab separated file_compound\n")
+    sys.stderr.write("prefix_length:\t\tlength of prefixes that are appended to the right-sided word (recommended parameter: 3)\n")
+    sys.stderr.write("suffix_length:\t\tlength of suffixes that are appended to the left-sided word (recommended parameter: 3)\n")
+    sys.stderr.write("word_length:\t\tminimal word length that is used from the split candidates (recommended parameter: 5)\n")
+    sys.stderr.write("dash_word:\t\theuristic to split words with dash, which has no big impact (recommended: 3)\n")
+    sys.stderr.write("upper:\t\t\tconsider uppercase letters (=upper) or not (=lower). Should be set for case-sensitive languages e.g. German\n")
+    sys.stderr.write("epsilon:\t\tsmoothing factor (recommended parameter: 0.01\n")
     sys.exit(0)
 file_knowledge = sys.argv[1]
 file_wordcount = sys.argv[2]
