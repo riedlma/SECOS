@@ -6,6 +6,8 @@ Martin Riedl, Chris Biemann (2016): Unsupervised Compound Splitting With Distrib
 
 ## Split compounds
 
+In order to split compounds SECOS features some parameters and requires a candidate file, which is generated using a distributional thesaurus. In order to use SECOS for splitting German and Dutch compounds, you can use pre-computed candidate lists and the commands shown below.
+
 ```
 python decompound_secos.py dt_candidates word_count_file min_word_count(50) file_compound word_index prefix_length(3) suffix_length(3) word_length(5) dash_word(3) upper(upper) epsilon
 -----------------------------------------------------
