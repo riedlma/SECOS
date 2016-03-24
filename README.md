@@ -1,8 +1,7 @@
 # SECOS - SEmantic COmpound Splitter
 
-SECOS is an unsupervised compound splitter that uses information from a distributional thesaurus (DT). Details about its working can be found in our [paper](https://www.lt.informatik.tu-darmstadt.de/de/publications/details/?no_cache=1&tx_bibtex_pi1[pub_id]=TUD-CS-2016-0071)
+SECOS is an unsupervised compound splitter that uses information from a distributional thesaurus (DT). Details about its working can be found in our [paper](https://www.lt.informatik.tu-darmstadt.de/de/publications/details/?no_cache=1&tx_bibtex_pi1[pub_id]=TUD-CS-2016-0071).
 
-Martin Riedl, Chris Biemann (2016): Unsupervised Compound Splitting With Distributional Semantics Rivals Supervised Methods, In: Proceedings of the Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (NAACL-HLT 2016), San Diego, CA, USA
 
 ## Split compounds
 
