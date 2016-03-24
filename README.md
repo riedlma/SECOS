@@ -25,16 +25,28 @@ epsilon:		smoothing factor (recommended parameter: 0.01
 ```
 
 ### Example for German
+
+In order to compound German words you need to download and unzip the following package: [data.zip](https://maggie.lt.informatik.tu-darmstadt.de/software/SECOS/data.zip). Using these files, a list of compounds (german_compounds) can be split using the following command:
+
+
+```
 python decompound_secos.py data/denews70M_tokenized_trigram__candidates data/denews70M_tokeniyed_trigram__WordCount 50 german_compounds 0 3 3 5 3 upper 0.01
+```
 
 
 ### Example for Dutch
+In order to compound German words you need to download and unzip the following package: [data.zip](https://maggie.lt.informatik.tu-darmstadt.de/software/SECOS/data.zip). Using these files, a list of compounds (german_compounds) can be split using the following command:
+
+```
 python decompound_secos.py data/dutch_cow_trigram__candidates data/dutch_cow_trigram__WordCount 50 dutch_compounds 0 3 3 5 3 lower 0.01
+```
 
 
 ## Training new language
 
+```
 cat dt | python generateDecompoundCandidates.py > dt_candidates
+```
 
 The DT is a file of 3 tab separated columns with two words and their similarity score. The file needs to be ordered by the first word and the similarity score in descending ordering. The DT is generated using JoBimText (www.jobimtext.org) using only neighboring words by using the Trigram holing operation.
 
