@@ -84,7 +84,13 @@ cat compound_file | python eval_decompounding.py 1 2 debug
 
 ## Comparing results with significance test
 
-will follow as well
+In addition to the above evaluation script, we also provide an evaluation script that can be used to compute a significance test between two methods. For this we use a Wilcoxon rank sum test and compare the performance based on the F1 score of each split compound. The test can be started using the following command:
+
+```
+python eval_decompounding_wilcoxon.py compound_file_1 predicted_compound gold_compound compound_file_2 predicted_compound gold_compound
+```
+
+
 
 # Citation:
 
