@@ -55,7 +55,32 @@ cat dt | python generateDecompoundCandidates.py > dt_candidates
 
 ## Evaluation
 
-will follow soon
+
+For the evaluation the python script eval_decompounding.py can be used. It expects as stdin a tab separated file including the gold standard and the predicted splits which are separated with dashs (-).
+
+Here an example for a compound file (compound_file) where column 1 contains the predicted splits and column 2 the gold standard split
+
+```
+cat compound_file | python eval_decompounding.py 1 2 
+```
+
+This command results to the following output (precision, recall and F1 measure based on the splits (the third row rounds to 4 digits). The last column presents the number of compounds considered and the amount of entirely correctly split compounds as well as the rate of correct split compounds.
+
+```
+Precision       Recall       F1
+0.986667        0.964335     0.975373
+0.9867 &        0.9643&      0.9754
+Considered      Correct      Percentage of Correct ones
+700.000000      662.000000   0.945714
+
+```
+
+A detailed output of correct and false splits can be enabled by providing a third parameter:
+
+```
+cat compound_file | python eval_decompounding.py 1 2 debug
+```
+
 
 ## Comparing results with significance test
 
