@@ -101,7 +101,7 @@ If you use SECOS, please cite the following work:
     title={Unsupervised Compound Splitting With Distributional Semantics Rivals Supervised Methods },
     author={Martin Riedl, Chris Biemann},
     booktitle={Proceedings of The 15th Annual Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologie},
-    pages={},
+    pages={617--622},
     year={2016},
     address={San Diego, CA, USA},
 }
