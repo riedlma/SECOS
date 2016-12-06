@@ -51,6 +51,25 @@ Using such a DT the candidates can easily be generated with the following comman
 cat dt | python generateDecompoundCandidates.py > dt_candidates
 ```
 
+## Decompound text
+For decompounding from the STDIN using the best option you can use the following python script which has similar parameters as the script above:
+
+```
+echo "Ich esse gerne Zitroneneis" | python decompound_secos.py dt_candidates word_count_file min_word_count(50) file_compound word_index prefix_length(3) suffix_length(3) word_length(5) dash_word(3) upper(upper) epsilon
+-----------------------------------------------------
+Parameter description:
+-----------------------------------------------------
+dt_candidates:      file with words and their split candidates, generated from a distributional thesaurus (DT)
+word_count_file:    file with word counts used for filtering
+min_word_count:     minimal word count used for split candidates (recommended paramater: 50)
+prefix_length:      length of prefixes that are appended to the right-sided word (recommended parameter: 3)
+suffix_length:      length of suffixes that are appended to the left-sided word (recommended parameter: 3)
+word_length:        minimal word length that is used from the split candidates (recommended parameter: 5)
+dash_word:          heuristic to split words with dash, which has no big impact (recommended: 3)
+upper:              consider uppercase letters (=upper) or not (=lower). Should be set for case-sensitive languages e.g. German
+epsilon:            smoothing factor (recommended parameter: 0.01
+```
+
 
 
 ## Evaluation
