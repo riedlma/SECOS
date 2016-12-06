@@ -55,7 +55,7 @@ cat dt | python generateDecompoundCandidates.py > dt_candidates
 For decompounding from the STDIN using the best option you can use the following python script which has similar parameters as the script above:
 
 ```
-echo "Ich esse gerne Zitroneneis" | python decompound_secos.py dt_candidates word_count_file min_word_count(50) file_compound word_index prefix_length(3) suffix_length(3) word_length(5) dash_word(3) upper(upper) epsilon
+echo "Ich esse gerne Zitroneneis" | python decompound_text_secos.py dt_candidates word_count_file min_word_count(50) file_compound word_index prefix_length(3) suffix_length(3) word_length(5) dash_word(3) upper(upper) epsilon
 -----------------------------------------------------
 Parameter description:
 -----------------------------------------------------
