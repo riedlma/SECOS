@@ -27,7 +27,7 @@ epsilon:			smoothing factor (recommended parameter: 0.01
 
 ### Apply SECOS to German Compounds
 
-In order to compound German words you need to download and unzip the following package: [data.zip](https://maggie.lt.informatik.tu-darmstadt.de/files/SECOS/data.zip). Using these files, a list of compounds (german_compounds) can be split using the following command:
+In order to compound German words you need to download and unzip the following package: [data.zip](https://ltmaggie.informatik.uni-hamburg.de/files/SECOS/data.zip). Using these files, a list of compounds (german_compounds) can be split using the following command:
 
 
 ```
@@ -36,7 +36,7 @@ python decompound_secos.py data/denews70M_tokenized_trigram__candidates data/den
 
 
 ### Apply SECOS to Dutch Compounds
-In order to compound Dutch words you need to download and unzip the following package: [data.zip](https://maggie.lt.informatik.tu-darmstadt.de/files/SECOS/data.zip). Using these files, a list of compounds (dutch_compounds) can be split using the following command:
+In order to compound Dutch words you need to download and unzip the following package: [data.zip](https://ltmaggie.informatik.uni-hamburg.de/files/SECOS/data.zip). Using these files, a list of compounds (dutch_compounds) can be split using the following command:
 
 ```
 python decompound_secos.py data/dutch_cow_trigram__candidates data/dutch_cow_trigram__WordCount 50 dutch_compounds 0 3 3 5 3 lower 0.01
