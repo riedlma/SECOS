@@ -31,16 +31,51 @@ In order to compound German words you need to download and unzip the following p
 
 
 ```
-python decompound_secos.py data/denews70M_tokenized_trigram__candidates data/denews70M_tokeniyed_trigram__WordCount 50 german_compounds 0 3 3 5 3 upper 0.01
+python decompound_secos.py data/denews70M_trigram__candidates data/denews70M_trigram__WordCount 50 german_compounds 0 3 3 5 3 upper 0.01 > output
 ```
+
+For explaining the output, we also define an examplary german_compounds file with the following content:
+
+```
+Donaudampfschifffahrtsgesellschaftskapitän
+Hefeweizenbier
+```
+
+Executing SECOS, we retrieve the file output has the following content:
+
+
+```
+U Donau-dampf-schifffahrts-gesellschafts-kapitän  U       Donau-dampf-schifffahrts-gesellschafts-kapitän  Donaudampfschifffahrtsgesellschaftskapitän      Donaudampfschifffahrtsgesellschaftskapitän  Donaudampfschifffahrtsgesellschaftskapitän      Donau-dampf-schifffahrts-gesellschafts-kapitän  -1 Donaudampfschifffahrtsgesellschaftskapitän
+U Hefe-weizen-bier        U       Hefe-weizen-bier        Hefeweizenbier  Hefeweizenbier  Hefeweizenbier  Hefe-weizen-bier     2   Hefeweizenbier 
+```
+
+with the following columns:
+
+1)  Method that was considered best for the compounding 
+    following possibilities: 
+        C1: use similar candidate units
+        C2: use extended similar candidate units
+        C3: use combination of C1 and C2
+        U:  Use the generated dictionary method
+2)  Splitted word using method described in column 1)
+3)  Method that performs the most splits (same abbreviations like 1)
+4)  Splitted word using method described in column 3)
+5)  Split compound using C1
+6)  Split compound using C2
+7)  Split compound using C3
+8)  Split compound using U
+9)  Word frequency of the word considered
+10) the line of the input file
+
 
 
 ### Apply SECOS to Dutch Compounds
 In order to compound Dutch words you need to download and unzip the following package: [data.zip](https://ltmaggie.informatik.uni-hamburg.de/files/SECOS/data.zip). Using these files, a list of compounds (dutch_compounds) can be split using the following command:
 
 ```
-python decompound_secos.py data/dutch_cow_trigram__candidates data/dutch_cow_trigram__WordCount 50 dutch_compounds 0 3 3 5 3 lower 0.01
+python decompound_secos.py data/dutchCoW_trigram__candidates data/dutchCoW_trigram__WordCount 50 dutch_compounds 0 3 3 5 3 lower 0.01
 ```
+
 
 
 ## Training Candidates for New Language

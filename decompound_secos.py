@@ -32,7 +32,7 @@ prefix_length = int(sys.argv[6])
 suffix_length = int(sys.argv[7])
 min_word_length = int(sys.argv[8])
 epsilon = float(sys.argv[11])
-sys.stderr.write(str(epsilon)+"\t:epsilon")
+#sys.stderr.write(str(epsilon)+"\t:epsilon")
 #1 -> remove, 2 -> split, 3 -> nothing
 dash_words = int(sys.argv[9])
 uppercaseFirstLetter=False
@@ -194,7 +194,7 @@ singlewords = set()
 for c in comp1:
     if "-" in comp1[c]:
         singlewords|=set(comp1[c].split("-"))
-sys.stderr.write("decompound")
+sys.stderr.write("decompound\n")
 #k = open("singlewords_martin","w")
 #for s in singlewords:
 #    k.write(s+"\n")
@@ -278,7 +278,8 @@ for l in open(file_compound):
         pcand = cands[idx]
         pprefix = cands_str[idx]
 
-    print "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%d\t%s" %(pprefix,pcand,prefix,cand,c1,c2,c3,u,l.strip(),wc,ufeats) 
+    #print "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%d\t%s" %(pprefix,pcand,prefix,cand,c1,c2,c3,u,wc,l.strip(),wc,ufeats) 
+    print "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%d\t%s" %(pprefix,pcand,prefix,cand,c1,c2,c3,u,wc,l.strip()) 
 
 
     
