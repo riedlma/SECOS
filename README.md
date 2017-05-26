@@ -51,6 +51,7 @@ U Hefe-weizen-bier        U       Hefe-weizen-bier        Hefeweizenbier  Hefewe
 
 with the following columns:
 
+```
 1)  Method that was considered best for the compounding 
     following possibilities: 
         C1: use similar candidate units
@@ -66,7 +67,7 @@ with the following columns:
 8)  Split compound using U
 9)  Word frequency of the word considered
 10) the line of the input file
-
+```
 
 
 ### Apply SECOS to Dutch Compounds
@@ -76,7 +77,7 @@ In order to compound Dutch words you need to download and unzip the following pa
 python decompound_secos.py data/dutchCoW_trigram__candidates data/dutchCoW_trigram__WordCount 50 dutch_compounds 0 3 3 5 3 lower 0.01
 ```
 
-
+For more information about input and output read the example on applying SECOS to German.
 
 ## Training Candidates for New Language
 In order to train candidates for a new language, a distributional thesaurus (DT) is required. The DT is a file of 3 tab separated columns with two words and their similarity score. The file needs to be ordered by the first word and the similarity score in descending ordering. The DT is generated using JoBimText (www.jobimtext.org) using only neighboring words by using the Trigram holing operation.
