@@ -1,6 +1,6 @@
 # SECOS - SEmantic COmpound Splitter
 
-SECOS is an unsupervised compound splitter that uses information from a distributional thesaurus (DT). Details about its working can be found in our [paper](https://www.lt.informatik.tu-darmstadt.de/de/publications/details/?no_cache=1&tx_bibtex_pi1[pub_id]=TUD-CS-2016-0071).
+SECOS is an unsupervised compound splitter that uses information from a distributional thesaurus (DT). Details about its working can be found in our [paper](https://www.inf.uni-hamburg.de/en/inst/ab/lt/publications/2016-riedletal-naacl.pdf).
 
 
 Table of Content
@@ -12,7 +12,8 @@ Table of Content
   * [Apply SECOS to Dutch Compounds](#apply-secos-to-dutch-compounds)
   * [Decompound text](#decompound-server)
   * [Decompound server](#decompound-server)
-  * [Significance testing](significance-testing)
+  * [Significance testing](#significance-testing)
+  * [Precomputed models](#precomputed-models)
   * [Citation](#citation)
   * [License](#license)
 
@@ -214,6 +215,10 @@ python eval_decompounding_wilcoxon.py compound_file_1 predicted_compound gold_co
 ```
 
 
+Precomputed Resources
+=====================
+
+We provide precomputed models for German and Dutch. Further models will follow in the future. The models can be downloaded here: [data.zip](https://ltmaggie.informatik.uni-hamburg.de/files/SECOS/data.zip) 
 
 Citation
 ========
