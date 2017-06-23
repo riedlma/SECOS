@@ -112,6 +112,44 @@ Using the German model the following command can be used:
 echo "Ich esse gerne Zitroneneis" | python decompound_text_secos.py denews70M_trigram__candidates denews70M_trigram__WordCount 50 3 3 5 3 upper 0.01
 ```
 
+## Decompound server
+When you want to decompound many different documents, the decompounding can take quite some time. In order to reduce the time needed for decompounding, I provide some decompounding server. Thus, the model does not need to be loaded serveral times. In addition, all decompounded words are stored in memory, which speeds up the decompounding of text tremendously. The server can be started with the same parameters as the 'Decompound text' and has an additional parameter for the port the server should run.
+
+```
+python decompound_server.py dt_candidates word_count_file min_word_count(50) word_index prefix_length(3) suffix_length(3) word_length(5) dash_word(3) upper(upper) epsilon port
+-----------------------------------------------------
+Parameter description:
+-----------------------------------------------------
+dt_candidates:          file with words and their split candidates, generated from a distributional thesaurus (DT)
+word_count_file:        file with word counts used for filtering
+min_word_count:         minimal word count used for split candidates (recommended paramater: 50)
+prefix_length:          length of prefixes that are appended to the right-sided word (recommended parameter: 3)
+suffix_length:          length of suffixes that are appended to the left-sided word (recommended parameter: 3)
+word_length:            minimal word length that is used from the split candidates (recommended parameter: 5)
+dash_word:              heuristic to split words with dash, which has no big impact (recommended: 3)
+upper:                  consider uppercase letters (=upper) or not (=lower). Should be set for case-sensitive languages e.g. German
+epsilon:                smoothing factor (recommended parameter: 0.01
+```
+
+Using the German model the server can be started as follows:
+
+```
+python decompound_server.py denews70M_trigram__candidates denews70M_trigram__WordCount 50 3 3 5 3 upper 0.01 2020
+```
+
+Once the server is running queries can be performed as following:
+
+```
+curl localhost:2020?sentence=Hefeweizenbier
+```
+
+and will return the decompounded word using whitespaces:
+
+```
+Hefe weizen bier
+```
+
+
 ## Evaluation
 
 
