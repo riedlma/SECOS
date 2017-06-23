@@ -3,7 +3,23 @@
 SECOS is an unsupervised compound splitter that uses information from a distributional thesaurus (DT). Details about its working can be found in our [paper](https://www.lt.informatik.tu-darmstadt.de/de/publications/details/?no_cache=1&tx_bibtex_pi1[pub_id]=TUD-CS-2016-0071).
 
 
-## Split compounds
+Table of Content
+================
+
+
+  * [Split compounds](#split-compounds)
+  * [Apply SECOS to German Compounds](#apply-secos-to-german-compounds)
+  * [Apply SECOS to Dutch Compounds](#apply-secos-to-dutch-compounds)
+  * [Decompound text](#decompound-server)
+  * [Decompound server](#decompound-server)
+  * [Significance testing](significance-testing)
+  * [Citation](#citation)
+  * [License](#license)
+
+
+
+Split compounds
+===============
 
 In order to split compounds SECOS features some parameters and requires a candidate file, which is generated using a distributional thesaurus. In order to use SECOS for splitting German and Dutch compounds, you can use pre-computed candidate lists and the commands shown below.
 
@@ -25,7 +41,8 @@ upper:				consider uppercase letters (=upper) or not (=lower). Should be set for
 epsilon:			smoothing factor (recommended parameter: 0.01
 ```
 
-### Apply SECOS to German Compounds
+Apply SECOS to German Compounds
+===============================
 
 In order to compound German words you need to download and unzip the following package: [data.zip](https://ltmaggie.informatik.uni-hamburg.de/files/SECOS/data.zip). Using these files, a list of compounds (german_compounds) can be split using the following command:
 
@@ -70,7 +87,9 @@ with the following columns:
 ```
 
 
-### Apply SECOS to Dutch Compounds
+Apply SECOS to Dutch Compounds
+==============================
+
 In order to compound Dutch words you need to download and unzip the following package: [data.zip](https://ltmaggie.informatik.uni-hamburg.de/files/SECOS/data.zip). Using these files, a list of compounds (dutch_compounds) can be split using the following command:
 
 ```
@@ -87,7 +106,9 @@ Using such a DT the candidates can easily be generated with the following comman
 cat dt | python generateDecompoundCandidates.py > dt_candidates
 ```
 
-## Decompound text
+Decompound text
+===============
+
 For decompounding from the STDIN using the best option you can use the following python script which has similar parameters as the script above:
 
 ```
@@ -112,7 +133,9 @@ Using the German model the following command can be used:
 echo "Ich esse gerne Zitroneneis" | python decompound_text_secos.py denews70M_trigram__candidates denews70M_trigram__WordCount 50 3 3 5 3 upper 0.01
 ```
 
-## Decompound server
+Decompound server
+=================
+
 When you want to decompound many different documents, the decompounding can take quite some time. In order to reduce the time needed for decompounding, I provide some decompounding server. Thus, the model does not need to be loaded serveral times. In addition, all decompounded words are stored in memory, which speeds up the decompounding of text tremendously. The server can be started with the same parameters as the 'Decompound text' and has an additional parameter for the port the server should run.
 
 ```
@@ -150,7 +173,9 @@ Hefe weizen bier
 ```
 
 
-## Evaluation
+Evaluation
+==========
+
 
 
 For the evaluation the python script eval_decompounding.py can be used. It expects as stdin a tab separated file including the gold standard and the predicted splits which are separated with dashs (-).
@@ -179,7 +204,8 @@ cat compound_file | python eval_decompounding.py 1 2 debug
 ```
 
 
-## Comparing results with significance test
+Significance testing
+========================================
 
 In addition to the above evaluation script, we also provide an evaluation script that can be used to compute a significance test between two methods. For this we use a Wilcoxon rank sum test and compare the performance based on the F1 score of each split compound. The test can be started using the following command:
 
@@ -189,7 +215,8 @@ python eval_decompounding_wilcoxon.py compound_file_1 predicted_compound gold_co
 
 
 
-# Citation:
+Citation
+========
 
 If you use SECOS, please cite the following work:
 
@@ -204,6 +231,7 @@ If you use SECOS, please cite the following work:
 }
 ```
 
-# License:
+License
+=======
 
 Apache License (ASL) 2.0
