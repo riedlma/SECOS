@@ -215,7 +215,7 @@ python eval_decompounding_wilcoxon.py compound_file_1 predicted_compound gold_co
 ```
 
 
-Precomputed Resources
+Precomputed Models
 =====================
 
 We provide precomputed models for German and Dutch. Further models will follow in the future. The models can be downloaded here: [data.zip](https://ltmaggie.informatik.uni-hamburg.de/files/SECOS/data.zip) 
