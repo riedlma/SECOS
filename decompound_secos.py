@@ -1,6 +1,7 @@
 import os
 import sys
 import re
+import gzip
 
 i=0
 
@@ -42,10 +43,16 @@ if sys.argv[10]=="upper":
 
 debug = True
 debug = False
+
+def nopen(f):
+    if f.endswith(".gz"):
+        return gzip.open(f)
+    return open(f)
+
 words = set()
 total_word_count = 0
 word_count = {}
-for l in open(file_wordcount):
+for l in nopen(file_wordcount):
     ls = l.strip().split("\t")
     wc = int(ls[1])
     #if wc >=min_word_count:
@@ -182,7 +189,7 @@ comp1 = {}
 comp2 ={}
 comp3 = {}
 sys.stderr.write("read knowledge\n")
-for l in open(file_knowledge):
+for l in nopen(file_knowledge):
     ls = l.rstrip("\n").split("\t")
     w = ls[0]
     if not removeWord(w):
@@ -195,7 +202,7 @@ for c in comp1:
     if "-" in comp1[c]:
         singlewords|=set(comp1[c].split("-"))
 sys.stderr.write("decompound\n")
-#k = open("singlewords_martin","w")
+#k = nopen("singlewords_martin","w")
 #for s in singlewords:
 #    k.write(s+"\n")
 #close(k)
@@ -250,7 +257,7 @@ def getHighestProb(compounds):
     return getMaxIdx(probs)
     
                
-for l in open(file_compound):
+for l in nopen(file_compound):
     ls = l.strip().split("\t")
     w = ls[word_index_file_compound]
     wc = -1
@@ -278,8 +285,8 @@ for l in open(file_compound):
         pcand = cands[idx]
         pprefix = cands_str[idx]
 
-    #print "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%d\t%s" %(pprefix,pcand,prefix,cand,c1,c2,c3,u,wc,l.strip(),wc,ufeats) 
-    print "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%d\t%s" %(pprefix,pcand,prefix,cand,c1,c2,c3,u,wc,l.strip()) 
+    #print "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%d\t%s" %(pprefix,pcand,prefix,cand,c1,c2,c3,u,wc,l.strip(),wc,ufeats)
+    print "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%d\t%s" %(pprefix,pcand,prefix,cand,c1,c2,c3,u,wc,l.strip()) 
 
 
     

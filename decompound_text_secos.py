@@ -37,10 +37,17 @@ if sys.argv[8]=="upper":
 
 debug = True
 debug = False
+
+def nopen(f):
+    if f.endswith(".gz"):
+        return gzip.open(f)
+    return open(f)
+
+
 words = set()
 total_word_count = 0
 word_count = {}
-for l in open(file_wordcount):
+for l in nopen(file_wordcount):
     ls = l.strip().split("\t")
     wc = int(ls[1])
     #if wc >=min_word_count:
@@ -169,7 +176,7 @@ comp1 = {}
 comp2 ={}
 comp3 = {}
 sys.stderr.write("read knowledge\n")
-for l in open(file_knowledge):
+for l in nopen(file_knowledge):
     ls = l.rstrip("\n").split("\t")
     w = ls[0]
     if not removeWord(w):
@@ -182,7 +189,7 @@ for c in comp1:
     if "-" in comp1[c]:
         singlewords|=set(comp1[c].split("-"))
 sys.stderr.write("start decompound process\n")
-#k = open("singlewords_martin","w")
+#k = nopen("singlewords_martin","w")
 #for s in singlewords:
 #    k.write(s+"\n")
 #close(k)

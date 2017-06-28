@@ -44,6 +44,9 @@ if sys.argv[8]=="upper":
 
 debug = True
 debug = False
+
+
+
 words = set()
 total_word_count = 0
 word_count = {}
