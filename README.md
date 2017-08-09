@@ -14,6 +14,7 @@ Table of Content
   * [Decompound server](#decompound-server)
   * [Significance testing](#significance-testing)
   * [Precomputed models](#precomputed-models)
+  * [Datasets for Evaluation](#datasets-for-evaluation)
   * [Citation](#citation)
   * [License](#license)
 
@@ -218,7 +219,31 @@ python eval_decompounding_wilcoxon.py compound_file_1 predicted_compound gold_co
 Precomputed Models
 =====================
 
-We provide precomputed models for German and Dutch. Further models will follow in the future. The models can be downloaded here: [data.zip](https://ltmaggie.informatik.uni-hamburg.de/files/SECOS/data.zip) 
+We provide precomputed models for German and Dutch, which can be downloaded here: [data.zip](https://ltmaggie.informatik.uni-hamburg.de/files/SECOS/data.zip) 
+
+In addition, we have computed further models using Wikipedia for various languages. In order to compute similarities, we have either used JoBimText or Word2Vec. The different models are [here](http://ltdata1.informatik.uni-hamburg.de/SECOS) for the following languages:
+
+| Language  | Abbreviation |
+| ------------- | ------------- |
+| Danish | da |
+| German | de |
+| English | en |
+| Spanish | es |
+| Estonian | et |
+| Farsi | fa |
+| Finnish | fi |
+| Hungarian | hu |
+| Latin | la |
+| Latvian | lv |
+| Netherland | nl |
+| Norway | no |
+| Swedish | sv |
+
+
+Datasets for Evaluation
+=====================
+
+In order to perform an evaluation based on several languages in an automatic fashion, we have extracted compound words from Wiktionary for various langauges. These are available here: [datasets](http://ltdata1.informatik.uni-hamburg.de/SECOS/datasets/)
 
 Citation
 ========
