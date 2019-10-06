@@ -10,7 +10,7 @@ import SocketServer
 i=0
 
 if len(sys.argv)<9:
-    sys.stderr.write( "python "+sys.argv[0]+" dt_candidates word_count_file min_word_count(50) word_index prefix_length(3) suffix_length(3) word_length(5) dash_word(3) upper(upper) epsilon port\n")
+    sys.stderr.write( "python "+sys.argv[0]+" dt_candidates word_count_file min_word_count(50) prefix_length(3) suffix_length(3) word_length(5) dash_word(3) upper(upper) epsilon port\n")
     sys.stderr.write("-----------------------------------------------------\n")
     sys.stderr.write("Parameter description:\n")
     sys.stderr.write("-----------------------------------------------------\n")
