@@ -141,7 +141,7 @@ Decompound server
 When you want to decompound many different documents, the decompounding can take quite some time. In order to reduce the time needed for decompounding, I provide some decompounding server. Thus, the model does not need to be loaded serveral times. In addition, all decompounded words are stored in memory, which speeds up the decompounding of text tremendously. The server can be started with the same parameters as the 'Decompound text' and has an additional parameter for the port the server should run.
 
 ```
-python decompound_server.py dt_candidates word_count_file min_word_count(50) word_index prefix_length(3) suffix_length(3) word_length(5) dash_word(3) upper(upper) epsilon port
+python decompound_server.py dt_candidates word_count_file min_word_count(50) prefix_length(3) suffix_length(3) word_length(5) dash_word(3) upper(upper) epsilon port
 -----------------------------------------------------
 Parameter description:
 -----------------------------------------------------
